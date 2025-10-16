@@ -4,9 +4,9 @@ import { MdFastfood } from "react-icons/md";
 
 const Nav = () => {
   return (
-    <div className="flex items-center justify-between w-full h-[100px] px-8 ">
-      <div className="w-16 h-16 bg-white flex items-center justify-center rounded">
-        <MdFastfood className="text-black text-3xl" />
+    <div className="flex items-center justify-between w-full h-[100px] px-8  ">
+      <div className="w-16 h-16 bg-white flex items-center justify-center rounded shadow-2xl">
+        <MdFastfood className="text-green-600 text-3xl" />
       </div>
 
       <form action="" className="flex rounded bg-white w-[70%] px-6 py-4">
@@ -18,8 +18,8 @@ const Nav = () => {
         />
       </form>
 
-      <div className="w-16 h-16 bg-white flex items-center justify-center rounded">
-        <LuShoppingBag className="text-black text-3xl" />
+      <div className="w-16 h-16 bg-white flex items-center justify-center rounded shadow-2xl">
+        <LuShoppingBag className="text-green-600 text-3xl" />
       </div>
     </div>
   );
