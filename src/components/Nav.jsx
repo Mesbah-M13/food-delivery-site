@@ -9,7 +9,10 @@ const Nav = () => {
         <MdFastfood className="text-green-600 text-3xl" />
       </div>
 
-      <form action="" className="flex rounded bg-white w-[70%] px-6 py-4 ">
+      <form
+        action=""
+        className="flex rounded-md shadow-2xl bg-white w-[70%] px-6 py-4 "
+      >
         <IoSearch className="text-black text-3xl" />
         <input
           type="text"
