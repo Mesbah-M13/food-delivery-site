@@ -9,12 +9,12 @@ const Nav = () => {
         <MdFastfood className="text-green-600 text-3xl" />
       </div>
 
-      <form action="" className="flex rounded bg-white w-[70%] px-6 py-4">
+      <form action="" className="flex rounded bg-white w-[70%] px-6 py-4 ">
         <IoSearch className="text-black text-3xl" />
         <input
           type="text"
           placeholder="Search your dish..."
-          className="text-slate-700 pl-4 "
+          className=" text-slate-700 pl-4 w-full text-xl border-none outline-none "
         />
       </form>
 
