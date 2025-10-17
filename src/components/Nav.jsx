@@ -11,7 +11,7 @@ const Nav = () => {
 
       <form
         action=""
-        className="flex rounded-md shadow-2xl bg-white w-[70%] px-6 py-4 "
+        className="flex rounded-md shadow-lg bg-white w-[70%] px-6 py-4 "
       >
         <IoSearch className="text-black text-3xl" />
         <input
@@ -21,7 +21,10 @@ const Nav = () => {
         />
       </form>
 
-      <div className="w-16 h-16 bg-white flex items-center justify-center rounded shadow-2xl">
+      <div className="relative w-16 h-16 bg-white flex items-center justify-center rounded shadow-2xl">
+        <span className="text-green-500 font-semibold text-lg absolute top-0 right-2">
+          0
+        </span>
         <LuShoppingBag className="text-green-600 text-3xl" />
       </div>
     </div>
