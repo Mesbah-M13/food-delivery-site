@@ -14,3 +14,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@theme {
+  --color-primary: #00c951;
+}
