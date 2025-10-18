@@ -5,6 +5,7 @@ import Card from "../components/Card";
 import { food_items } from "../food";
 import { dataContext } from "../context/UserContext";
 import { RxCross1 } from "react-icons/rx";
+import CardInfo from "../components/CardInfo";
 
 const Home = () => {
   const { cate, setCate, input, showOrder, setShowOrder } =
@@ -65,6 +66,8 @@ const Home = () => {
             onClick={() => setShowOrder(false)}
           />
         </header>
+
+        <CardInfo />
       </div>
     </div>
   );
