@@ -30,10 +30,10 @@ const CardInfo = () => {
       </div>
 
       <div
-        className="text-green-600 font-medium tracking-widest
+        className="text-primary font-medium tracking-wide
  flex flex-col items-end gap-5 text-sm"
       >
-        <div>BDT 399/-</div>
+        <div className="text-xl">BDT 399/-</div>
         <RiDeleteBin5Line className="text-red-500 text-4xl " />
       </div>
     </div>
