@@ -6,7 +6,8 @@ import { dataContext } from "../context/UserContext";
 import { food_items } from "../food";
 
 const Nav = () => {
-  const { input, setInput, setCate } = useContext(dataContext);
+  const { input, setInput, setCate, showOrder, setShowOrder } =
+    useContext(dataContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,12 +37,15 @@ const Nav = () => {
         <input
           type="text"
           placeholder="Search your dish..."
-          className=" text-slate-700 pl-4 w-full border-none outline-none text-sm md:text-3xl "
+          className=" text-slate-700 pl-4 w-full border-none outline-none text-sm md:text-2xlxl "
           onChange={(e) => setInput(e.target.value)}
         />
       </form>
 
-      <div className="relative w-16 h-16 bg-white flex items-center justify-center rounded shadow-2xl">
+      <div
+        className="relative w-16 h-16 bg-white flex items-center justify-center rounded shadow-2xl cursor-pointer "
+        onClick={() => setShowOrder(true)}
+      >
         <span className="text-primary font-semibold text-lg absolute top-0 right-2">
           0
         </span>

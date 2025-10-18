@@ -1,18 +1,22 @@
-import React, { useContext, useState } from "react";
+import { useContext } from "react";
 import Nav from "../components/Nav";
 import Categories from "../Caterory";
 import Card from "../components/Card";
 import { food_items } from "../food";
 import { dataContext } from "../context/UserContext";
+import { RxCross1 } from "react-icons/rx";
 
 const Home = () => {
-  const { cate, setCate, input } = useContext(dataContext);
+  const { cate, setCate, input, showOrder, setShowOrder } =
+    useContext(dataContext);
 
-  function filterItems(category) {
-    if (category === "All") {
+  function filterItems(itemFromCategory) {
+    if (itemFromCategory === "All") {
       setCate(food_items);
     } else {
-      let newList = food_items.filter((it) => it.food_category === category);
+      let newList = food_items.filter(
+        (it) => it.food_category === itemFromCategory
+      );
       setCate(newList);
     }
   }
@@ -46,6 +50,21 @@ const Home = () => {
             type={item.food_type}
           />
         ))}
+      </div>
+
+      {/* Cart top right */}
+      <div
+        className={` w-[30vw] h-[100%] fixed top-0 right-0 bg-white shadow-xl transition-all duration-300 p-8 ${
+          showOrder ? "translate-x-0" : "translate-x-full"
+        }  `}
+      >
+        <header className="flex items-center justify-between text-primary ">
+          <span className="font-semibold text-xl">Order Items</span>
+          <RxCross1
+            className="w-[20px] h-[30px] cursor-pointer hover:text-gray-600"
+            onClick={() => setShowOrder(false)}
+          />
+        </header>
       </div>
     </div>
   );
