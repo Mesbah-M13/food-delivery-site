@@ -9,10 +9,7 @@ const CardInfo = () => {
           <img src={image1} alt="" className=" object-cover" />
         </div>
         <div className="w-[45%] h-full flex flex-col gap-5 text-black  ">
-          <div
-            className="text-xl text-gray-700 font-semibold tracking-wider
-"
-          >
+          <div className="text-xl text-gray-700 font-semibold tracking-wider">
             Pancake
           </div>
           <div className=" w-9/10 h-8 bg-slate-400 flex items-center justify-between overflow-hidden rounded-md text-xl border border-green-400 ">
@@ -29,10 +26,7 @@ const CardInfo = () => {
         </div>
       </div>
 
-      <div
-        className="text-primary font-medium tracking-wide
- flex flex-col items-end gap-5 text-sm"
-      >
+      <div className="text-primary font-medium tracking-wide flex flex-col items-end gap-5 text-sm">
         <div className="text-xl">BDT 399/-</div>
         <RiDeleteBin5Line className="text-red-500 text-4xl " />
       </div>

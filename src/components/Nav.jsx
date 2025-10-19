@@ -4,6 +4,7 @@ import { LuShoppingBag } from "react-icons/lu";
 import { MdFastfood } from "react-icons/md";
 import { dataContext } from "../context/UserContext";
 import { food_items } from "../food";
+import { useSelector } from "react-redux";
 
 const Nav = () => {
   const { input, setInput, setCate, showOrder, setShowOrder } =
@@ -21,6 +22,8 @@ const Nav = () => {
     );
     setCate(newFoodList);
   }, [input]);
+
+  const items = useSelector((state) => state.cart);
 
   return (
     <div className="flex items-center justify-between w-full h-[100px] px-4 md:px-8  ">
@@ -47,7 +50,7 @@ const Nav = () => {
         onClick={() => setShowOrder(true)}
       >
         <span className="text-primary font-semibold text-lg absolute top-0 right-2">
-          0
+          {items.length}
         </span>
         <LuShoppingBag className="text-primary text-3xl" />
       </div>

@@ -6,6 +6,7 @@ import { food_items } from "../food";
 import { dataContext } from "../context/UserContext";
 import { RxCross1 } from "react-icons/rx";
 import CardInfo from "../components/CardInfo";
+import { useSelector } from "react-redux";
 
 const Home = () => {
   const { cate, setCate, input, showOrder, setShowOrder } =
@@ -21,6 +22,7 @@ const Home = () => {
       setCate(newList);
     }
   }
+
   return (
     <div className="w-full bg-slate-200 min-h-screen">
       <Nav />
@@ -55,7 +57,7 @@ const Home = () => {
 
       {/* Cart top right */}
       <div
-        className={` w-[30vw] h-[100%] fixed top-0 right-0 bg-white shadow-xl transition-all duration-300 p-8 ${
+        className={`w-full md:w-[30vw] h-[100%] fixed top-0 right-0 bg-white shadow-xl transition-all duration-300 p-8 ${
           showOrder ? "translate-x-0" : "translate-x-full"
         }  `}
       >
@@ -67,7 +69,7 @@ const Home = () => {
           />
         </header>
 
-        <CardInfo />
+        {/* <CardInfo /> */}
       </div>
     </div>
   );
