@@ -25,7 +25,17 @@ const Card = ({ name, image, price, id, type }) => {
 
       <button
         className="bg-green-200 py-4 w-full rounded-md border border-transparent hover:border-black hover:bg-green-300 text-md transition-all duration-100"
-        onClick={() => dispatch(addItem({ id: id }))}
+        onClick={() =>
+          dispatch(
+            addItem({
+              id: id,
+              name: name,
+              image: image,
+              price: price,
+              gty: 1,
+            })
+          )
+        }
       >
         {" "}
         Add To Dish

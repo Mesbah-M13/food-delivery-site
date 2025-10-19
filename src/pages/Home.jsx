@@ -23,6 +23,8 @@ const Home = () => {
     }
   }
 
+  const items = useSelector((state) => state.cart);
+
   return (
     <div className="w-full bg-slate-200 min-h-screen">
       <Nav />
@@ -69,7 +71,17 @@ const Home = () => {
           />
         </header>
 
-        {/* <CardInfo /> */}
+        <div className="w-full mt-8 flex flex-col gap-5">
+          {items.map((item) => (
+            <CardInfo
+              name={item.name}
+              price={item.price}
+              image={item.image}
+              id={item.id}
+              qty={item.qty}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
