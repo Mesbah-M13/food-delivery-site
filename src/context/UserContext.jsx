@@ -7,7 +7,7 @@ const UserContext = ({ children }) => {
   const [cate, setCate] = useState(food_items);
   const [input, setInput] = useState("");
 
-  const [showOrder, setShowOrder] = useState(false);
+  const [showOrder, setShowOrder] = useState(false); // for order items summary on the right side
 
   const data = {
     input,

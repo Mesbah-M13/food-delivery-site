@@ -25,7 +25,7 @@ const Nav = () => {
 
   const items = useSelector((state) => state.cart);
 
-  console.log(items);
+  // console.log(items);
 
   return (
     <div className="flex items-center justify-between w-full h-[100px] px-4 md:px-8  ">

@@ -32,7 +32,7 @@ const Card = ({ name, image, price, id, type }) => {
               name: name,
               image: image,
               price: price,
-              gty: 1,
+              qty: 1,
             })
           )
         }

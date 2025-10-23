@@ -25,6 +25,16 @@ const Home = () => {
 
   const items = useSelector((state) => state.cart);
 
+  const subTotal = items.reduce(
+    (total, item) => total + item.qty * item.price,
+    0
+  );
+
+  const delivery_charge = 10;
+  const tax_rate = (subTotal * 0.25) / 100;
+
+  const total_price = Math.floor(subTotal + delivery_charge + tax_rate);
+
   return (
     <div className="w-full bg-slate-200 min-h-screen">
       <Nav />
@@ -59,7 +69,7 @@ const Home = () => {
 
       {/* Cart top right */}
       <div
-        className={`w-full md:w-[30vw] h-[100%] fixed top-0 right-0 bg-white shadow-xl transition-all duration-300 p-8 ${
+        className={`w-full md:w-[30vw] h-[100%] fixed top-0 right-0 overflow-auto bg-white shadow-xl transition-all duration-300 p-8 ${
           showOrder ? "translate-x-0" : "translate-x-full"
         }  `}
       >
@@ -71,7 +81,7 @@ const Home = () => {
           />
         </header>
 
-        <div className="w-full mt-8 flex flex-col gap-5">
+        <div className="w-full mt-8 flex flex-col  gap-5">
           {items.map((item) => (
             <CardInfo
               name={item.name}
@@ -81,6 +91,34 @@ const Home = () => {
               qty={item.qty}
             />
           ))}
+        </div>
+
+        <div className="w-full border-t-2 border-b-2 border-gray-400 text-black pb-5 mt-6">
+          <div className="flex items-center justify-between pt-4">
+            <span className="text-lg"> Subtotal</span>
+            <span className="text-green-600 text-lg">BDT {subTotal}/- </span>
+          </div>
+          <div className="flex items-center justify-between pt-4">
+            <span className="text-lg"> Delivery Fee</span>
+            <span className="text-green-600 text-lg">
+              BDT {delivery_charge}/-{" "}
+            </span>
+          </div>
+          <div className="flex items-center justify-between pt-4">
+            <span className="text-lg"> Taxes</span>
+            <span className="text-green-600 text-lg">BDT {tax_rate}/- </span>
+          </div>
+        </div>
+        <div>
+          <div className="flex items-center justify-between pt-4 text-xl font-bold">
+            <span className=" text-gray-900 "> Total</span>
+            <span className="text-green-600 ">BDT {total_price}/- </span>
+          </div>
+        </div>
+        <div className="flex justify-center">
+          <button className="w-8/10 mx:w-auto px-6 mt-3.5 py-3 font-semibold text-white text-2xl tracking-wider bg-gradient-to-r from-teal-400 to-green-400 rounded-lg hover:bg-green-300 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 cursor-pointer">
+            Place Order
+          </button>
         </div>
       </div>
     </div>
